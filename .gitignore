@@ -1,0 +1,26 @@
+# Terraform
+terraform.tfstate
+terraform.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+.terraform/
+.terraform.lock.hcl
+tfplan
+crash.log
+crash.*.log
+
+# Secrets / keys
+*.pem
+*.key
+.env
+.env.*
+
+# Node
+node_modules/
+npm-debug.log*
+.nyc_output/
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db

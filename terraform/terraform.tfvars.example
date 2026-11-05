@@ -1,0 +1,28 @@
+# Copy to terraform.tfvars and edit. NEVER commit terraform.tfvars.
+
+aws_region          = "ap-south-1"
+environment         = "dev"
+project_name        = "arrowstack-t1"
+owner_email         = "bhumika2005gandhi@gmail.com"
+vpc_cidr            = "10.20.0.0/16"
+availability_zones  = ["ap-south-1a", "ap-south-1b"]
+app_port            = 3000
+instance_type       = "t3.micro"
+asg_min_size        = 2
+asg_max_size        = 4
+asg_desired_capacity = 2
+db_instance_class   = "db.t3.micro"
+db_engine           = "postgres"
+db_engine_version   = "15.5"
+db_allocated_storage = 20
+db_name             = "appdb"
+enable_bastion      = true
+
+# Tighten to your home/office IP CIDR for prod: ["203.0.113.10/32"]
+allowed_ingress_cidrs = ["0.0.0.0/0"]
+
+# Create this key pair in AWS console first, or via:
+#   aws ec2 create-key-pair --key-name arrowstack-task1-key \
+#     --query 'KeyMaterial' --output text > arrowstack-task1-key.pem
+ssh_key_name        = "arrowstack-task1-key"
+log_retention_days  = 14
